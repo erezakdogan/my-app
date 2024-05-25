@@ -4,7 +4,11 @@ import "formik";
 import { Form, Formik, Field, ErrorMessage } from "formik";
 import { addToAll, getAll } from "../service/storage_api";
 import { Note, NoteFormValues } from "../data/note";
+import { usePathname, useRouter } from "next/navigation";
 const FormComponent = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+
   return (
     <div className="flex-grow min-h-full items-start p-4">
       <Formik
@@ -15,11 +19,12 @@ const FormComponent = () => {
             addToAll(values).then((result) => {
               setSubmitting(false);
             });
+            router.push(pathname);
           }, 1000);
         }}
       >
         {({ isSubmitting }) => (
-          <Form className="text-purple-600">
+          <Form className="">
             <div>
               <label className="flex flex-col text-lg" htmlFor="title">
                 Title:
@@ -27,7 +32,7 @@ const FormComponent = () => {
                   type="text"
                   name="title"
                   id="title"
-                  className="px-1 rounded-lg focus:outline-solid outline-purple-600 "
+                  className="px-1 rounded-lg focus:outline-solid outline-gray-600 "
                 />
               </label>
 
@@ -39,13 +44,13 @@ const FormComponent = () => {
                 as="textarea"
                 name="description"
                 id="description"
-                className="px-1 rounded-lg focus:outline-solid outline-purple-600"
+                className="px-1 rounded-lg focus:outline-solid outline-gray-600"
               />
             </div>
             <p>Tags:</p>
             <div className="grid grid-cols-3 gap-2 py-2">
               <label
-                className="flex items-center gap-1 outline outline-purple-600 rounded-lg px-2"
+                className="flex items-center gap-1 outline outline-gray-600 rounded-lg px-2"
                 htmlFor="tag-urgent"
               >
                 <Field
@@ -57,7 +62,7 @@ const FormComponent = () => {
                 Urgent
               </label>
               <label
-                className="flex items-center gap-1 outline outline-purple-600 rounded-lg px-2"
+                className="flex items-center gap-1 outline outline-gray-600 rounded-lg px-2"
                 htmlFor="tag-personal"
               >
                 <Field
@@ -70,7 +75,7 @@ const FormComponent = () => {
                 Personal
               </label>
               <label
-                className="flex items-center gap-1 outline outline-purple-600 rounded-lg px-2"
+                className="flex items-center gap-1 outline outline-gray-600 rounded-lg px-2"
                 htmlFor="tag-lists"
               >
                 <Field
@@ -82,7 +87,7 @@ const FormComponent = () => {
                 Lists
               </label>
               <label
-                className="flex items-center gap-1 outline outline-purple-600 rounded-lg px-2"
+                className="flex items-center gap-1 outline outline-gray-600 rounded-lg px-2"
                 htmlFor="tag-project"
               >
                 <Field

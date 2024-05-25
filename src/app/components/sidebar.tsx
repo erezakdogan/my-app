@@ -9,56 +9,44 @@ export function Sidebar() {
   };
   return (
     <div className="flex flex-col space-y-1">
-      <Link
-        className="bg-purple-200 rounded-md p-1 text-start text-purple-600"
-        href={"/"}
-      >
+      <Link className="bg-white rounded-md p-1 text-start " href={"/"}>
         All
       </Link>
-      <Link
-        className="bg-purple-200 rounded-md p-1 text-start text-purple-600"
-        href={"/active"}
-      >
+      <Link className="bg-white rounded-md p-1 text-start " href={"/active"}>
         Active
       </Link>
-      <Link
-        className="bg-purple-200 rounded-md p-1 text-start text-purple-600"
-        href={"/done"}
-      >
+      <Link className="bg-white rounded-md p-1 text-start " href={"/done"}>
         Done
       </Link>
       <button
-        className="bg-purple-200 rounded-md p-1 text-start text-purple-600"
+        className="bg-white rounded-md p-1 text-start "
         onClick={toggleDropdown}
       >
         Tags
         {isOpen && (
           <div className="my-1">
             <ul className=" space-y-1">
-              <li className="bg-white px-2 py-1 rounded-md">
-                <Link
-                  className="rounded-md p-1 text-start text-purple-600"
-                  href={"/urgent"}
-                >
+              <li className="bg-gray-100 px-2 py-1 rounded-md">
+                <Link className="rounded-md p-1 text-start " href={"/urgent"}>
                   Urgent
                 </Link>
               </li>
-              <li className="bg-white px-2 py-1 rounded-md">
+              <li className="bg-gray-100 px-2 py-1 rounded-md">
                 <Link className=" rounded-md p-1 text-start " href={"/list"}>
                   List
                 </Link>
               </li>
-              <li className="bg-white px-2 py-1 rounded-md">
+              <li className="bg-gray-100 px-2 py-1 rounded-md">
                 <Link className=" rounded-md p-1 text-start " href={"/project"}>
                   Project
                 </Link>
               </li>
-              <li className="bg-white px-2 py-1 rounded-md">
+              <li className="bg-gray-100 px-2 py-1 rounded-md">
                 <Link
                   className=" rounded-md p-1 text-start "
                   href={"/personal"}
                 >
-                  Personal
+                  Persona
                 </Link>
               </li>
             </ul>
@@ -66,10 +54,7 @@ export function Sidebar() {
         )}
       </button>
 
-      <Link
-        className="bg-purple-200 rounded-md p-1 text-start text-purple-600"
-        href={"/trash"}
-      >
+      <Link className="bg-white rounded-md p-1 text-start " href={"/trash"}>
         Trash
       </Link>
     </div>

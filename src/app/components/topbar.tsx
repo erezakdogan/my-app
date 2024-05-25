@@ -1,16 +1,14 @@
 "use client";
-import { useState } from "react";
 import Modal from "./Modal";
 import Link from "next/link";
 import FormComponent from "./FormComponent";
-
 export function TopBar() {
   return (
-    <div className="fill-gray-400 px-2 flex justify-between">
+    <div className="flex flex-row justify-between fill-gray-400 px-2 ">
       <div className="flex flex-row space-x-8">
-        <div className="text-base px-4 text-purple-800">
+        <div className="text-base px-4 ">
           <h1 className="text-3xl">Tasks</h1>
-          <div className="flex flex-row divide-x divide-purple-600">
+          <div className="flex flex-row divide-x divide-gray-600">
             <h2 className="px-1">Home</h2>
             <h2 className="px-1">Apps</h2>
           </div>
@@ -23,22 +21,20 @@ export function TopBar() {
             id="search-box"
             placeholder={"Search"}
           />
-          <button className="outline outline-2 outline-purple-400 text-purple-400 px-4 rounded-xl ">
+          <button className="outline outline-2 outline-gray-400  px-4 rounded-xl ">
             Search
           </button>
         </div>
       </div>
-
       <Link
-        className="bg-white outline outline-2 outline-purple-400 text-purple-400 p-2 rounded-lg text-center justify-center"
+        className="bg-white outline outline-2 outline-gray-400 items-center content-center p-2 rounded-lg"
         href={"?modal=true"}
       >
         New Task
       </Link>
-        <Modal>
+      <Modal>
         <FormComponent />
       </Modal>
-      
     </div>
   );
 }
